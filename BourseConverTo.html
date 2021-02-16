@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+     <!-- **https://github.com/BourseConverTo/Site.git**/ -->
+<head>
+    <meta charset="utf-8"/>
+    <title> BourseConverTo </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body> 
+    <header>
+        <nav>
+            <ul>
+                <li id="logo"> <a href="#">BourseConverTo</a></li>
+                <li> <a href="https://translate.google.com/translate?langpair=fr%7Cen&sl=fr&tl=en&u=URL du site">Langue</a></li>
+                <li> <a href="https://www.boursorama.com/bourse/"> Bourse </a></li>
+                <!-- ****<div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/fr/country/fr"><span style="color:gray;">Heure actuelle</span><br />France</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=small&timezone=Europe%2FParis" width="8%" height="82" frameborder="0" seamless></iframe> </div>/*** -->
+                
+            </ul>
+
+
+        </nav> 
+        <div id="imagePrincipale">
+            <h1>BourseConverTo</h1>
+        <div id ="premierTrait"></div>
+        <h3>Convertisseur de taux en ligne</h3> 
+        </div>     
+
+    </header>
+
+    <section id="taux">
+        <h2>Caculer le rapport de vos actions et de votre Prix de Revient Unitaire (PRU)</h2>
+        <ul>
+            <li id="argent"><p></p></li>
+        </ul>
+    </section>
+
+
+    <section id="calculPRU">
+       
+        <form name="formcalc">
+            <th>Nombres d'actions/prix d'achat/
+            Investissement/Cours actuel<br>
+           <input placeholder="Nombre d'actions" type="number" pattern="[0-9]{5]" name="txtnum1">     
+          <input placeholder="Prix d'achat €" type="number" name="txtnum2">
+          <input id="buttonegal" type="button" value="=" onclick="sommeinves()" >
+          
+           <input placeholder="Investissement €" type="number" name ="txtnum3">
+            <input placeholder="Cours actuel €" type="number" name = "coursact">
+            <input type="button" value="Calcul" onclick="sumValues()" >
+           </th>
+            <br>
+            <br>
+            <br>
+            <th>Variable du Cours/ Retour sur Investissement / Bénéfice / Total (%)<br>
+            <input placeholder="Variable du Cours €" type="number" name="varcours">
+            <input placeholder="Retour Sur Investissement €" type="number" name="RSI">
+            <input placeholder="Bénéfice €" type="number" name="benef">
+            <input placeholder="TOT %" type="number" name="tot">
+            </th>
+          <br>
+          <br>
+           
+           
+           <th>Prix de Revient Unitaire</th><br>
+           <input placeholder="Nombre d'actions" type="number" name="txtnum4">
+                
+           <input placeholder="Prix d'achat €" type="number" name="txtnum5">
+           <input type="button" value="=" >
+           
+            <input placeholder="Investissement €" type="number" name ="txtnum6">
+            <input type="button" value="Calcul du PRU" onclick="somme()">
+            <input placeholder="PRU €" type="number" name="textres">
+            <br>
+            <br>
+
+            <input placeholder="nombres d'actions" type="number" name="nadeux">
+           <input placeholder="Second Prix d'achat €" type="number" name="deuxprix">
+           <input type="button" value="=" onclick="sommeinv()">
+           <input placeholder="Second Investissement €" type="number" name="deuxinvest" >
+          <input type="button" value="≃">
+        <input placeholder="Différence Prix d'achat €" type="number" name="difprix">
+        <br>
+        <br>
+        <br>
+        <input type="reset"  value="Clear">
+         
+            
+        
+
+
+
+
+      
+      
+      </form>
+      <script type="text/javascript">
+
+      function sommeinves() {
+        var num1,num2,num3;
+        num1 = Number (document.formcalc.txtnum1.value);
+        num3 = Number (document.formcalc.txtnum3.value);
+        num2 = num3/num1;
+
+        document.formcalc.txtnum2.value=num2;
+
+      }
+      function sumValues()
+      {
+         
+          var num1,num2,num3,coursvar,coursact,RSIres,resbenef,res,totpour;
+          num1 = Number (document.formcalc.txtnum1.value);
+          num2 = Number (document.formcalc.txtnum2.value);
+          coursact= Number (document.formcalc.coursact.value);
+        
+          num3=num1*num2;
+          
+          coursvar=num2-coursact;
+          RSIres=num1*coursact;
+          resbenef=RSIres-num3;
+            totpour=((RSIres-num3)/num3)*100;
+          document.formcalc.varcours.value=coursvar;
+          document.formcalc.txtnum3.value=num3;
+          document.formcalc.RSI.value= RSIres;
+          document.formcalc.benef.value=resbenef;
+          document.formcalc.tot.value=totpour;
+          
+          totpour.toFixed(2);
+      }
+      function somme(){
+
+        var num4,num5,num6,deuxprix,invest2,nadeux,difprix;
+        
+        
+        deuxprix = Number (document.formcalc.deuxprix.value);
+          nadeux= Number (document.formcalc.nadeux.value);
+          num4= Number (document.formcalc.txtnum4.value);
+          num5= Number (document.formcalc.txtnum5.value);
+          invest2 = deuxprix*nadeux;
+        res=(num4*num5)+(nadeux*deuxprix)/num4+nadeux;
+            num6=num4*num5;
+            difprix=num5-deuxprix;
+            document.formcalc.deuxinvest.value=invest2;
+          document.formcalc.txtnum6.value=num6;
+          document.formcalc.difprix.value=difprix;
+          document.formcalc.textres.value=res;
+          
+      }
+      function sommeinv(){
+
+          var na2,deuxprix,invest2,nadeux;
+          deuxprix = Number(document.formcalc.deuxprix.value);
+          invest2 = Number(document.formcalc.deuxinvest.value);
+            na2 = invest2/deuxprix;
+            document.formcalc.nadeux.value=na2;
+      }
+      function clear(){
+        clear
+      }
+      </script>  
+      </section>
+    <section id="presentation">
+        <div id="texteIntro">
+            <h2>Un convertisseur rapide pour vos actions</h2>
+            <p>Vous avez toujours été à la recherche du site qui vous faciliterez les convertions de vos actions? Bienvenue sur BourseconverTo! </p>
+        </div>
+        <div id="prestations">
+            <div class="imagesPrestations">
+                <h4>Visualisez vos futurs taux</h4>
+                
+            </div>
+        </div>
+    </section>
+   
+
+
+
+<a href="https://www.boursorama.com/bourse/">  </a>
+
+<footer>
+     <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/fr/country/fr"><span style="color:gray;">Heure actuelle</span><br />France</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=small&timezone=Europe%2FParis" width="8%" height="82" frameborder="0" seamless></iframe> </div>
+
+
+<div id="deuxiemeTrait"></div>
+<div id="copyrightEtIcons"></div>
+<div id="copyright">
+    <span>
+        © de BourseConverTo 2021
+    </span>
+</div>
+     
+
+</footer>
+</body>
+
+
+</html>

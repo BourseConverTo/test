@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@200&family=Roboto:ital,wght@1,100&display=swap');
+body {
+    font-family: 'Advent Pro', sans-serif;
+    padding: 0;
+    margin:0;
+}
+ul {
+    margin:0;
+    padding: 0;   
+}
+li{
+    list-style-type: none;
+}
+h2{
+    text-transform: lowercase;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* ***************NAVBAR***************** */
+header nav {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    opacity: 0.9;
+}
+header li {
+    float: right;
+    font-size: 1.2em;
+
+}
+header li a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 18px 16px;    
+}
+#logo {
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: bold;
+    float: left;
+}
+/* ********IMAGE PRINCIPALE******** */
+#imagePrincipale{
+    padding-top: 60px;
+    background: black;
+    background-size: cover;
+    height: 299px;
+}
+h1{
+    font-family: 'Faunces', serif;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 4em;
+    margin-top: 5px;
+    padding-top: 100px;
+    text-shadow: 1px 3px 2px black;
+}
+#premierTrait {
+    height: 2px;
+    width: 85%;
+    margin: -50px auto;
+    background-color: white;
+    box-shadow: 1px 3px 2px black;
+}
+h3{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    margin: 70px auto;
+}
+/* **********PRESENTATION********* */
+#presentation{
+    background-color: whitesmoke;
+    padding: 10px 0px 100px 0px;
+}
+#texteIntro{
+    padding: 0px 20%;
+}
+
+.imagesPrestations h4{
+ font-family: "Roboto", sans-serif;
+ text-align: center;
+ font-size: 1.8em;
+ margin: 15px;
+ font-weight: 300;
+}
+/* ***********FOOOTER********* */
+#calculPRU{
+    background-color:lightgray;
+    padding: 10px 0px 100px 0px;
+    
+}
+input,button{
+    border: black;
+    width: 5%;
+    padding: 8px 8px;
+    margin: 5px 1px;
+    font-size: 1em;
+    font-family: "Advent Pro", sans-serif;
+    border-radius: 5px;
+    font-weight: 600;
+    
+    
+    
+
+}
+footer{
+    background-color:black ;
+    color: whitesmoke;
+    padding: 20px 0px 10px 0px;
+    text-align: center;
+}
+
+th{
+    font-family: "Advanced Pro",sans-serif;
+    text-align: justify;
+    padding:10px;
+    margin:20px;
+    font-size: 2em;
+}
+
+
+
+#copyright{
+    font-family: "Advanced Pro", sans-serif;
+    text-align: center;
+    padding: -10px ;
+    margin: 10px ;
+    text-align: left;
+}
